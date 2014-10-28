@@ -1,0 +1,21 @@
+<h1>Disable validation</h1>
+<div class="row">
+	<div class="span8">
+		<form name="form" no-validate>
+			<label>
+			<input type="checkbox" ng-model="disableValidation"> Disable validation
+			</label>
+
+			<label for="name">Name</label>
+		    <input id="name" name="name" type="text" ng-model="poney.name" required disable-validation="disableValidation" />
+		    <ul>
+		    	<li ng-show="form.name.$error.required">A name is required</li>
+		    </ul>
+
+
+		</form>
+	</div>
+	<div class="span4">
+	{{ poney }}
+	</div>
+</div>

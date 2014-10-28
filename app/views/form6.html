@@ -1,0 +1,16 @@
+<h1>Asynchronous validation</h1>
+<div class="row">
+	<div class="span8">
+		<form name="form" novalidate>
+		    <input name="name" type="text" ng-model="user.name" username />
+		    <ul>
+		    	<li ng-show="form.name.$pending.username">Checking for name...</li>
+		    	<li ng-show="form.name.$error.username">This username is already taken!</li>
+	    	</ul>
+		</form>
+	</div>
+	<div class="span4">
+	{{ user }}
+	</div>
+</div>
+

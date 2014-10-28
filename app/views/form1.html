@@ -1,0 +1,28 @@
+<h1>Submit & Cancel</h1>
+<h2>Form1<h2>
+<form name="form1" novalidate>
+    <input type="text" />
+    <button ng-click="doCancel('form1')">Cancel</button>
+    <button ng-click="doSubmit('form1')">Submit</button>
+</form>
+
+<h2>Form2<h2>
+<form name="form2" ng-submit="doSubmit('form2')" novalidate>
+    <input type="text" />
+    <input type="reset" value="Cancel" ng-click="doCancel('form2')">
+    <input type="submit" value="Submit">
+</form>
+
+<h2>Form3<h2>
+<form name="form3" novalidate>
+    <input type="text" />
+    <input type="reset" value="Cancel" ng-click="doCancel('form3')">
+    <input type="submit" value="Submit" ng-click="doSubmit('form3')">
+</form>
+
+<h2>Form4<h2>
+<form name="form" novalidate>
+    <input type="text" />
+    <input type="reset" value="Cancel" ng-click="doCancel('form4')">
+    <button type="submit" ng-click="doSubmit('form4')"> Submit</button>
+</form>

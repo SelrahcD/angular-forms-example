@@ -1,0 +1,29 @@
+<h1>Add more element</h1>
+<div class="row">
+	<div class="span8">
+		<form name="formEcurie" novalidate>
+			<label for="name">Ecurie name</label>
+		    <input id="name" name="name" type="text" ng-model="ecurie.name" required />
+		    <ul>
+		    	<li ng-show="formEcurie.name.$error.required">A name is required</li>
+		    </ul>
+
+		    <div ng-repeat="poney in ecurie.poneys" ng-form="poneyForm">
+		    	<label>Poney name
+			    	<input name="poneyName" type="text" ng-model="poney.name" required />
+			    </label>
+			    <ul>
+			    	<li ng-show="poneyForm.poneyName.$error.required">A poney name is required</li>
+			    </ul>
+		    </div>
+
+		    <button ng-click="addPoney()">Add poney</button>
+
+		    <input type="reset" value="Cancel" ng-click="doCancel()">
+		    <input type="submit" value="Submit" ng-click="doSubmit()" ng-disabled="formEcurie.$invalid">
+		</form>
+	</div>
+	<div class="span4">
+	{{ ecurie }}
+	</div>
+</div>

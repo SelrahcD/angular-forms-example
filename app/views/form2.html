@@ -1,0 +1,26 @@
+<h1>Validation</h1>
+<div class="row">
+	<div class="span8">
+		<form name="form" novalidate>
+			<label for="name">Name</label>
+		    <input id="name" name="name" type="text" ng-model="poney.name" required />
+		    <ul>
+		    	<li ng-show="form.name.$error.required">A name is required</li>
+		    </ul>
+
+		    <label for="age">Age</label>
+		    <input id="age" name="age" type="number" ng-model="poney.age" required min="0" max="20" />
+		    <ul>
+		    	<li ng-show="form.age.$error.required">An age is required</li>
+		    	<li ng-show="form.age.$error.min">Minimal age is 0</li>
+		    	<li ng-show="form.age.$error.max">Maximal age is 20</li>
+		    </ul>
+
+		    <input type="reset" value="Cancel" ng-click="doCancel()">
+		    <input type="submit" value="Submit" ng-click="doSubmit()" ng-disabled="form.$invalid">
+		</form>
+	</div>
+	<div class="span4">
+	{{ poney }}
+	</div>
+</div>

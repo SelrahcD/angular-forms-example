@@ -1,0 +1,20 @@
+<h1>Custom validation</h1>
+
+<h2>Min</h2>
+<form name="form" novalidate>
+
+    <input name="age" type="number" ng-model="poney.age" min="0"/>
+    <ul>
+    	<li ng-show="form.age.$error.min">Minimal age is 0</li>
+    </ul>
+</form>
+
+<h2>Strict Min</h2>
+<form name="form2" novalidate>
+
+    <input name="age2" type="number" ng-model="age2" strict-min="0" />
+    <ul>
+    	<li ng-show="form2.age2.$error.strictMin">Minimal age is 0</li>
+    </ul>
+</form>
+
